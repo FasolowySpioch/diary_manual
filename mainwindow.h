@@ -19,12 +19,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     wpis entry_info;
-    bool is_succes=false; //zmienna do sprawdzenia czy użytkownik wprowadził poprawną datę
-    //std::vector<wpis> sort;
-
 
 private slots:
     void on_memoSaveButton_clicked();
+
+    void on_oldSortButton_clicked();
+
+    void on_newSortButton_clicked();
+
+    void displayOnMemo();
 
 private:
     Ui::MainWindow *ui;

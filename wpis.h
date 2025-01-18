@@ -24,7 +24,10 @@ public:
 
     void setDate(QDateTime d);
     void setTextInput(QString s);
-    void setSortList(wpis w, bool& iS);
+    void setSortList(wpis w /*bool& iS*/);
+
+    void sortOldList();
+    void sortNewList();
 
     QDateTime getDate();
     QString getStringDate();
