@@ -19,6 +19,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     wpis entry_info;
+    bool is_succes=false; //zmienna do sprawdzenia czy użytkownik wprowadził poprawną datę
     //std::vector<wpis> sort;
 
 

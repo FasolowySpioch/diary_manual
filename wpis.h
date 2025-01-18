@@ -4,36 +4,32 @@
 #include <QApplication>
 #include <QDateTimeEdit>
 #include <QTextBrowser>
+#include <QMessageBox>
 
 class wpis
 {
 private:
-    QDateTime date; //data z ostatniego wpisu przed kliknięciem zapisz
-    QString text_input; //temp przed zapisaniem
-    //std::vector<QString> all_tedt_sorted; //Przechowuje wszystkie dodane wpisy już posortowane datą
-    std::vector<QDateTime> dates;
-    std::vector<QString> texts;
+    QDateTime date;
+    QString text_input;
+    std::vector<wpis> list;
 public:
     wpis();
     wpis(QString text_input, QDateTime dateTime_QTformat);
     ~wpis();
 
-    bool operator!=(const wpis& w);
-    bool operator==(const wpis&w);
-    bool operator>(const wpis& w);
-    bool operator<(const wpis& w);
-
-    //std::vector<std::string> getVectorTEDT();
-   // void setVectorTEDT();
-
-   // std::string importToTextBrowser();
+    bool operator!=(const wpis& w) const;
+    bool operator==(const wpis&w) const;
+    bool operator>(const wpis& w) const;
+    bool operator<(const wpis& w) const;
 
     void setDate(QDateTime d);
     void setTextInput(QString s);
+    void setSortList(wpis w, bool& iS);
 
     QDateTime getDate();
     QString getStringDate();
     QString getTextInput();
+    std::vector<wpis> getList();
 };
 
 #endif // WPIS_H
